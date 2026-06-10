@@ -1,0 +1,228 @@
+/* ── ABOUT PAGE ── */
+
+/* HERO WITH PHOTO */
+.about-hero {
+  padding: 5rem 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-hero-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.about-hero-btns {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.about-hero-text p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 0.85rem;
+}
+
+/* PHOTO */
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.about-photo-badge {
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+  backdrop-filter: blur(8px);
+}
+
+.about-photo-badge strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ── INTERESTS ── */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.interest-card { transition: border-color 0.2s, transform 0.2s; }
+.interest-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.interest-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.interest-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.interest-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* ── TIMELINE ── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1px 1fr;
+  gap: 0 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 2px;
+  text-align: right;
+}
+
+.timeline-line {
+  background: var(--border);
+  width: 1px;
+  position: relative;
+}
+
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1px solid var(--bg);
+}
+
+.timeline-content { padding-bottom: 1rem; }
+
+.timeline-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content .school {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.school-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 4px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.timeline-content p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* ── SKILLS ── */
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-group h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-photo-wrap {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero { padding: 3.5rem 0 2rem; }
+  .interests-grid { grid-template-columns: 1fr; }
+
+  .timeline-item {
+    grid-template-columns: 80px 1px 1fr;
+    gap: 0 1.25rem;
+  }
+
+  .timeline-date { font-size: 0.72rem; }
+  .skills-groups { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem 0;
+  }
+
+  .timeline-line { display: none; }
+  .timeline-date { text-align: left; }
+}
